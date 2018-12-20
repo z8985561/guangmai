@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>朋友圈</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 适配文档 -->
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="pullrefresh">
+      <div>
+        <ul class="mui-table-view moments-wrap">
+        </ul>
+      </div>
+    </div>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="lib/swiper/js/swiper.min.js"></script>
+    <script src="lib/mui/js/mui.min.js"></script>
+    <script src="lib/mui/js/mui.zoom.js"></script>
+    <script src="lib/mui/js/mui.previewimage.js"></script>
+    <script src="lib/template-web.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script src="js/moments.js"></script>
+
+    <script id="moments-tpl" type="text/html">
+    {{each data as item}}
+      <li class="mui-table-view-cell mui-media">
+          <img class="mui-media-object mui-pull-left" src="{{item.userPortrait}}">
+          <div class="mui-media-body">
+              <span class="username">{{item.userName}}</span>
+              <p>{{item.content}}</p>
+              <div class="moments-img-list">
+                {{each item.picUrl as picUrl}}
+                <img src="{{picUrl}}"  data-preview-src="" data-preview-group="{{item.m_id}}" alt="">
+                {{/each}}
+              </div>
+              <div class="moments-comment">
+                <p class="date">{{item.date}}</p>
+                <p class="comment">
+                  <span class="js-reply-ctrl mui-icon mui-icon-chatboxes"></span>
+                </p>
+                <div class="comment-list">
+                  {{each item.comment as comment}}
+                  <p><span class="username">{{comment.commentUserName}}</span>
+                    {{comment.commentContent}}
+                  </p>
+                  {{/each}}
+                </div>
+                <div class="comment-textarea clearfix" style="display:none">
+                  <textarea name="" id="" cols="30" rows="2"></textarea>
+                  <button class="js-reply mui-btn mui-btn-blue mui-pull-right" data-username="老铁">回复</button>
+                </div>
+              </div>
+          </div>
+      </li>
+      {{/each}}
+    </script>
+</body>
+
+</html>
