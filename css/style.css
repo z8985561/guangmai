@@ -498,7 +498,7 @@ textarea {
   }
 }
 #pullrefresh {
-  position: absolute;
+  position: fixed;
   top: 20px;
   bottom: 20px;
   left: 0;
@@ -559,4 +559,79 @@ textarea {
 }
 .moments-comment .comment-textarea textarea {
   resize: unset;
+}
+.my-wrap {
+  padding: 0.6rem 0.4rem;
+}
+.my-header {
+  display: flex;
+  justify-content: space-between;
+  height: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+.my-header img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+.my-header span {
+  margin-left: 0.4rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+.my-header p {
+  height: 1.6rem;
+  line-height: 1.6rem;
+}
+.my-nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.6rem;
+}
+.my-nav li a {
+  flex: 0 1 18%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+.my-nav li a img {
+  width: 0.6667rem;
+  height: auto;
+}
+.my-nav-list li {
+  height: 1.4933rem;
+  line-height: 1.4933rem;
+  border-bottom: 1px solid #cfcfcf;
+}
+.my-nav-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+.my-nav-list li a span {
+  font-size: 16px;
+}
+.info-select {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.info-select h2 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+.info-select a {
+  display: inline-block;
+  margin: 0 10px;
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  background-color: #4b66b5;
+  color: #fff;
 }

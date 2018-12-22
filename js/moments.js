@@ -76,43 +76,46 @@ $(function(){
           var html = template("moments-tpl",res)
           $(".moments-wrap").append(html)
           that.endPullupToRefresh(false);
-          btnCtrl();
         }, 500);
       }
     });
   }
 
-  function btnCtrl(){
-    $(".js-reply-ctrl").on("tap",function(){
-      if($(this).data("comment")){
-          $(this).parents(".moments-comment").children(".comment-textarea").hide();
-          $(this).data("comment",false);
-          return;
-      }else if(!$(this).data("comment")){
-          $(this).parents(".moments-comment").children(".comment-textarea").show();
-          $(this).data("comment",true);
+
+
+
+  document.addEventListener("tap",function(e){
+    var $dom = $(e.target);
+    console.log($dom.context.nodeName,)
+    if($dom.context.className == "js-reply-ctrl mui-icon mui-icon-chatboxes"){
+      if(!$dom.data("comment")){
+        $dom.parents(".moments-comment").children(".comment-textarea").show();
+        $dom.data("comment",true);
+        return;
+      }else if($dom.data("comment")){
+          $dom.parents(".moments-comment").children(".comment-textarea").hide();
+          $dom.data("comment",false);
           return;
       }
-    })
-
-    $(".js-reply").on("tap",function(){
-      //清除所有的空格
-      var content = ($(this).siblings("textarea").val()).replace(/\s/g,'');
+    }else if($dom.context.className == "js-reply mui-btn mui-btn-blue mui-pull-right"){
+        //console.log($dom.context.className);
+        //清除所有的空格
+      var content = ($dom.siblings("textarea").val()).replace(/\s/g,'');
       if(content == ""){
         mui.alert("请输入内容！！");
         return;
       }
-      var username = $(this).data("username"),
+      var username = $dom.data("username"),
           html = `<p><span class="username">${username}</span>
                     ${content}
                   </p>`;
       //插入评论
-      $(this).parents(".moments-comment").children(".comment-list").append(html);
+      $dom.parents(".moments-comment").children(".comment-list").append(html);
       //清空输入框 并隐藏
-      $(this).siblings("textarea").val("").parent().hide().siblings(".comment")
+      $dom.siblings("textarea").val("").parent().hide().siblings(".comment")
       .children(".js-reply-ctrl").data("comment",false);
 
-
+      //把评论的内容发送给后台
       $.ajax({
         type: "post",
         url: "接口地址是啥？？？？",
@@ -124,23 +127,11 @@ $(function(){
           console.log(res)
         }
       });
-    })
-  }
+    }else if($dom.context.nodeName == "A"){
+      window.location.href = $dom.attr("href");
+    }
 
 
-
-
-  // document.addEventListener("tap",function(e){
-  //   var $dom = $(e.target);
-  //   if($dom.data("comment")){
-  //       $dom.parents(".moments-comment").children(".comment-textarea").show();
-  //       $dom.data("comment",false);
-  //       return;
-  //   }else if(!$dom.data("comment")){
-  //       $dom.parents(".moments-comment").children(".comment-textarea").hide();
-  //       $dom.data("comment",true);
-  //       return;
-  //   }
-  // })
+  })
 
 })
