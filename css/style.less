@@ -674,3 +674,127 @@ font-family: 'Helvetica Neue',Helvetica,sans-serif;
     color: #fff;
   }
 }
+
+// 头部分类导航
+.cate-nav{
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-bottom: 0.5333rem;
+  li{
+    padding:0 0.4rem;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 2px solid transparent;
+    a{
+      color: #333;
+      font-size: 14px;
+    }
+    &.on{
+      border-bottom: 2px solid #4b66b5;
+    }
+  }
+}
+.cate-sub-nav{
+  li{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: #fff;
+    display:none;
+    flex-wrap: wrap;
+    height: auto;
+    a{
+      flex: 0 1 30%;
+      padding: 5px;
+      text-align:center;
+      span{
+        display:inline-block;
+        width:90%;
+        height: 30px;
+        border: 1px solid yellow;
+        border-radius:15px;
+      }
+    }
+  }
+}
+
+
+
+// 短视频页面样式
+.short-video-wrap{
+  .video-list{
+    padding: 0 15px 60px;
+    li{
+      width: 100%;
+      margin-bottom:20px;
+      border-bottom:1px solid #dedddd;
+      span{
+        font-size: 14px;
+      }
+      p{
+        font-size: 12px;
+      }
+      .video-box{
+        position: relative;
+        width: 100%;
+        height: 190px;
+        overflow: hidden;
+        video{
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+        .video-player{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9;
+          span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 80px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.video-player-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+  display: none;
+  video{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+
+// 跳蚤商品详情页面样式
+.product-details-wrap{
+  padding: 0 15px;
+  .pro-price{
+    color: red;
+  }
+}

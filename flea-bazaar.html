@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>跳蚤商品详情</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 适配文档 -->
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="product-details-wrap">
+    <!-- 商品主图 -->
+    <div class="swiper-container mb-30" id="product-pic">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/banner1.jpg" data-preview-src="" data-preview-group="111" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="img/banner2.jpg" data-preview-src="" data-preview-group="111" alt="" width="100%"></div>
+        <div class="swiper-slide"><img src="img/banner3.jpg" data-preview-src="" data-preview-group="111" alt="" width="100%"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+     <!-- 商品主图 -->
+
+    <div class="product-details-content">
+      <h3 class="pro-price mb-30">￥299</h3>
+      <h4 class="mb-30">苹果 iPhone5s 银色 16G 国行 5s 16g。九成新刚刚过保国行a1530移动联通4g</h4>
+      <h4 class="mb-30">宝贝描述:</h4>
+      <p>颜色:银色 | 容量:16G | 购买渠道:国行</p>
+      <p>刚刚过保国行16g银色移动联通4g一点毛病没有嘎嘎新，1200不讲价</p>
+      <p>颜色:银色 | 容量:16G | 购买渠道:国行</p>
+      <p>刚刚过保国行16g银色移动联通4g一点毛病没有嘎嘎新，1200不讲价</p>
+      <p>颜色:银色 | 容量:16G | 购买渠道:国行</p>
+      <p>刚刚过保国行16g银色移动联通4g一点毛病没有嘎嘎新，1200不讲价</p>
+    </div>
+
+
+  </section>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="lib/swiper/js/swiper.min.js"></script>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script src="lib/mui/js/mui.zoom.js"></script>
+  <script src="lib/mui/js/mui.previewimage.js"></script>
+  <script>
+    var mySwiper = new Swiper('#product-pic', {
+      autoplay: false,//可选选项，自动滑动
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    })
+    //图片预览功能开启
+    mui.previewImage();
+  </script>
+</body>
+</html>

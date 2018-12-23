@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>短视频</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 适配文档 -->
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="short-video-wrap">
+    <div class="cate-nav">
+      <ul class="clearfix">
+        <li class="mui-pull-left on">教育培训</li>
+        <li class="mui-pull-left">爆笑生活</li>
+        <li class="mui-pull-left">等级考试</li>
+        <li class="mui-pull-left">男神女神</li>
+        <li class="mui-pull-left">男神女神</li>
+        <li class="mui-pull-left">男神女神</li>
+      </ul>
+      <ul class="cate-sub-nav">
+        <li>
+          <a href="#"><span>word</span></a>
+          <a href="#"><span>word</span></a>
+          <a href="#"><span>word</span></a>
+          <a href="#"><span>word</span></a>
+          <a href="#"><span>word</span></a>
+          <a href="#"><span>word</span></a>
+        </li>
+        <li>
+          <a href="#"><span>excel</span></a>
+          <a href="#"><span>excel</span></a>
+          <a href="#"><span>excel</span></a>
+          <a href="#"><span>excel</span></a>
+          <a href="#"><span>excel</span></a>
+        </li>
+        <li>
+          <a href="#"><span>ppt</span></a>
+          <a href="#"><span>ppt</span></a>
+          <a href="#"><span>ppt</span></a>
+          <a href="#"><span>ppt</span></a>
+          <a href="#"><span>ppt</span></a>
+        </li>
+        <li>
+          <a href="#"><span>cad</span></a>
+          <a href="#"><span>cad</span></a>
+          <a href="#"><span>cad</span></a>
+          <a href="#"><span>cad</span></a>
+          <a href="#"><span>cad</span></a>
+        </li>
+        <li>
+          <a href="#"><span>ps</span></a>
+          <a href="#"><span>ps</span></a>
+          <a href="#"><span>ps</span></a>
+          <a href="#"><span>ps</span></a>
+          <a href="#"><span>ps</span></a>
+        </li>
+        <li>
+          <a href="#"><span>pr</span></a>
+          <a href="#"><span>pr</span></a>
+          <a href="#"><span>pr</span></a>
+          <a href="#"><span>pr</span></a>
+          <a href="#"><span>pr</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="video-list">
+      <li>
+        <div class="video-box">
+          <video name="media" src="video/video-1.mp4">
+          </video>
+          <div class="video-player" data-videourl="video/video-1.mp4"><span class="mui-icon mui-icon-videocam"></span></div>
+        </div>
+        <div><span>这个猫猫成精了！！！</span><p>1分钟前</p></div>
+      </li>
+      <li>
+        <div class="video-box">
+          <video name="media" src="video/video-2.mp4">
+          </video>
+          <div class="video-player" data-videourl="video/video-2.mp4"><span class="mui-icon mui-icon-videocam"></span></div>
+        </div>
+        <div><span>这个猫猫成精了！！！</span><p>1分钟前</p></div>
+      </li>
+      <li>
+        <div class="video-box">
+          <video name="media" src="video/video-3.mp4">
+          </video>
+          <div class="video-player" data-videourl="video/video-3.mp4"><span class="mui-icon mui-icon-videocam"></span></div>
+        </div>
+        <div><span>这个猫猫成精了！！！</span><p>1分钟前</p></div>
+      </li>
+      <li>
+        <div class="video-box">
+          <video name="media" src="video/video-4.mp4">
+          </video>
+          <div class="video-player" data-videourl="video/video-4.mp4"><span class="mui-icon mui-icon-videocam"></span></div>
+        </div>
+        <div><span>这个猫猫成精了！！！</span><p>1分钟前</p></div>
+      </li>
+    </ul>
+  </section>
+  <div class="video-player-box">
+    <video src="#" controls autoplay name="media"></video>
+  </div>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="lib/swiper/js/swiper.min.js"></script>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script>
+    $(function(){
+
+      //头部分类UL的宽度设置
+      var ulWidth = 0;
+      $(".cate-nav .mui-pull-left").each(function(){
+        ulWidth += $(this).width() + 30;
+      })
+      $(".cate-nav ul").eq(0).width(ulWidth);
+
+      //点击视频后弹出播放视频界面
+      $(".video-list").on("tap",".video-player",function () {
+        var videoUrl = $(this).data("videourl");
+         $(".video-player-box").show().children("video").attr("src",videoUrl)
+      })
+
+      //点击关闭视频
+      $(".video-player-box").on("tap",function(){
+        $(this).hide();
+      })
+
+      //点击分类导航显示分类子导航
+      //记录当前显示的子导航分类索引号
+      var nowSubShow = 999;
+      $(".cate-nav .mui-pull-left").on("tap",function () {
+        if(nowSubShow != $(this).index()){
+          nowSubShow = $(this).index();
+          $(".cate-sub-nav").children("li").eq(nowSubShow).css("display","flex").siblings("li").hide();
+        }else {
+          $(".cate-sub-nav").children("li").eq(nowSubShow).hide();
+        }
+      })
+
+    })
+  </script>
+</body>
+</html>
