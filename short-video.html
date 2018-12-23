@@ -23,60 +23,24 @@
   <section class="short-video-wrap">
     <div class="cate-nav">
       <ul class="clearfix">
-        <li class="mui-pull-left on">教育培训</li>
-        <li class="mui-pull-left">爆笑生活</li>
-        <li class="mui-pull-left">等级考试</li>
-        <li class="mui-pull-left">男神女神</li>
-        <li class="mui-pull-left">男神女神</li>
-        <li class="mui-pull-left">男神女神</li>
-      </ul>
-      <ul class="cate-sub-nav">
-        <li>
-          <a href="#"><span>word</span></a>
-          <a href="#"><span>word</span></a>
-          <a href="#"><span>word</span></a>
-          <a href="#"><span>word</span></a>
-          <a href="#"><span>word</span></a>
-          <a href="#"><span>word</span></a>
-        </li>
-        <li>
-          <a href="#"><span>excel</span></a>
-          <a href="#"><span>excel</span></a>
-          <a href="#"><span>excel</span></a>
-          <a href="#"><span>excel</span></a>
-          <a href="#"><span>excel</span></a>
-        </li>
-        <li>
-          <a href="#"><span>ppt</span></a>
-          <a href="#"><span>ppt</span></a>
-          <a href="#"><span>ppt</span></a>
-          <a href="#"><span>ppt</span></a>
-          <a href="#"><span>ppt</span></a>
-        </li>
-        <li>
-          <a href="#"><span>cad</span></a>
-          <a href="#"><span>cad</span></a>
-          <a href="#"><span>cad</span></a>
-          <a href="#"><span>cad</span></a>
-          <a href="#"><span>cad</span></a>
-        </li>
-        <li>
-          <a href="#"><span>ps</span></a>
-          <a href="#"><span>ps</span></a>
-          <a href="#"><span>ps</span></a>
-          <a href="#"><span>ps</span></a>
-          <a href="#"><span>ps</span></a>
-        </li>
-        <li>
-          <a href="#"><span>pr</span></a>
-          <a href="#"><span>pr</span></a>
-          <a href="#"><span>pr</span></a>
-          <a href="#"><span>pr</span></a>
-          <a href="#"><span>pr</span></a>
-        </li>
+        <li class="mui-pull-left on"><a href="http://www.baidu.com">教育培训</a></li>
+        <li class="mui-pull-left"><a href="http://www.baidu.com">爆笑生活</a></li>
+        <li class="mui-pull-left"><a href="http://www.baidu.com">等级考试</a></li>
+        <li class="mui-pull-left"><a href="http://www.baidu.com">男神女神</a></li>
+        <li class="mui-pull-left"><a href="http://www.baidu.com">男神女神</a></li>
+        <li class="mui-pull-left"><a href="http://www.baidu.com">男神女神</a></li>
       </ul>
     </div>
-
+    <ul class="cate-sub-nav">
+      <li>
+        <a href="#"><span>word</span></a>
+        <a href="#"><span>word</span></a>
+        <a href="#"><span>word</span></a>
+        <a href="#"><span>word</span></a>
+        <a href="#"><span>word</span></a>
+        <a href="#"><span>word</span></a>
+      </li>
+    </ul>
     <ul class="video-list">
       <li>
         <div class="video-box">
@@ -141,16 +105,16 @@
       })
 
       //点击分类导航显示分类子导航
-      //记录当前显示的子导航分类索引号
-      var nowSubShow = 999;
-      $(".cate-nav .mui-pull-left").on("tap",function () {
-        if(nowSubShow != $(this).index()){
-          nowSubShow = $(this).index();
-          $(".cate-sub-nav").children("li").eq(nowSubShow).css("display","flex").siblings("li").hide();
-        }else {
-          $(".cate-sub-nav").children("li").eq(nowSubShow).hide();
+      $(".cate-nav .mui-pull-left a").on("click",function(e){
+        e.preventDefault();
+        if($(this).parent().hasClass("on")){
+          $(".cate-sub-nav li").hasClass("on") ? $(".cate-sub-nav li").removeClass("on") : $(".cate-sub-nav li").addClass("on")
+        }else{
+          window.location.href = $(this).attr("href")
         }
       })
+
+      //页面上拉后自动隐藏分类子导航
 
     })
   </script>

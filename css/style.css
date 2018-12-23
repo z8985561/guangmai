@@ -641,32 +641,34 @@ textarea {
   overflow-x: scroll;
   margin-bottom: 0.5333rem;
 }
-.cate-nav li {
+.cate-nav li.mui-pull-left {
   padding: 0 0.4rem;
   height: 30px;
   line-height: 30px;
   border-bottom: 2px solid transparent;
 }
-.cate-nav li a {
+.cate-nav li.mui-pull-left a {
   color: #333;
   font-size: 14px;
 }
-.cate-nav li.on {
+.cate-nav li.mui-pull-left.on {
   border-bottom: 2px solid #4b66b5;
 }
 .cate-sub-nav li {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  background: #fff;
   display: none;
+  background: #fff;
   flex-wrap: wrap;
-  height: auto;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.cate-sub-nav li.on {
+  display: flex;
 }
 .cate-sub-nav li a {
   flex: 0 1 30%;
   padding: 5px;
+  line-height: 28px;
   text-align: center;
 }
 .cate-sub-nav li a span {
