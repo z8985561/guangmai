@@ -100,8 +100,8 @@
       })
 
       //点击关闭视频
-      $(".video-player-box").on("tap",function(){
-        $(this).hide();
+      $(".video-player-box video").on("tap",function(){
+        $(this).attr("src","#").parent().hide();
       })
 
       //点击分类导航显示分类子导航
@@ -113,8 +113,6 @@
           window.location.href = $(this).attr("href")
         }
       })
-
-      //页面上拉后自动隐藏分类子导航
 
     })
   </script>
